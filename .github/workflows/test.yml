@@ -1,0 +1,11 @@
+name: Self-hosted Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: [self-hosted, docker]
+    steps:
+    - name: Echo message
+      run: echo "Hello from Docker Self-hosted Runner!" 
