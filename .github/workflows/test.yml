@@ -2,10 +2,12 @@ name: Self-hosted Test
 
 on:
   push:
+    branches:
+      - main  
 
 jobs:
   test:
-    runs-on: [self-hosted, docker]
+    runs-on: [self-hosted, docker]  
     steps:
     - name: Echo message
-      run: echo "Hello from Docker Self-hosted Runner!" 
+      run: echo "Hello from Docker Self-hosted Runner!"
