@@ -1,13 +1,14 @@
-name: Self-hosted Test
-
-on:
-  push:
-    branches:
-      - main  
+name: Custom Runner Workflow
+on: [push]
 
 jobs:
-  test:
-    runs-on: [self-hosted, docker]  
+  build:
+    runs-on: self-hosted
     steps:
-    - name: Echo message
-      run: echo "Hello from Docker Self-hosted Runner!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run a test
+        run: |
+          echo "Running on my custom runner!"
+          echo "Host: $HOSTNAME"
+          pwd
